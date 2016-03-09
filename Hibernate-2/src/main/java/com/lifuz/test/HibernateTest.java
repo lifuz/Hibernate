@@ -1,5 +1,7 @@
 package com.lifuz.test;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Date;
 
 import org.hibernate.Session;
@@ -8,6 +10,7 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.jdbc.Work;
 import org.hibernate.service.ServiceRegistry;
 import org.junit.After;
 import org.junit.Before;
@@ -44,6 +47,18 @@ public class HibernateTest {
 		transaction.commit();
 		session.close();
 		sessionFactory.close();
+	}
+	
+	@Test
+	public void testDoWork() {
+		session.doWork(new Work() {
+			
+			@Override
+			public void execute(Connection conn) throws SQLException {
+				System.out.println(conn);
+				
+			}
+		});
 	}
 	
 	/**
