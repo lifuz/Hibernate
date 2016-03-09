@@ -17,6 +17,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.lifuz.model.News;
+import com.lifuz.model.Pay;
+import com.lifuz.model.Worker;
 
 public class HibernateTest {
 	
@@ -47,6 +49,22 @@ public class HibernateTest {
 		transaction.commit();
 		session.close();
 		sessionFactory.close();
+	}
+	
+	@Test
+	public void testComponent() {
+		Worker worker = new Worker();
+		
+		Pay pay = new Pay();
+		
+		pay.setMonthPay(7000);
+		pay.setYearPay(74000);
+		pay.setVocationWithPay(5);
+		
+		worker.setName("lifuz");
+		worker.setPay(pay);
+		session.save(worker);
+		
 	}
 	
 	@Test
