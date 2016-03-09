@@ -50,6 +50,12 @@ public class HibernateTest {
 	}
 	
 	@Test
+	public void testDynamicUpdate() {
+		News news = session.get(News.class, 6);
+		news.setTitle("oracle");
+	}
+	
+	@Test
 	public void testDoWork() {
 		session.doWork(new Work() {
 			
