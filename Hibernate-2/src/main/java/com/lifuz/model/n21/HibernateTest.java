@@ -43,6 +43,30 @@ public class HibernateTest {
 	}
 	
 	@Test
+	public void testDelete() {
+		
+		Order order = session.get(Order.class, 2);
+		session.delete(order);
+		
+	}
+	
+	@Test
+	public void testUpdate() {
+		
+		Order order = session.get(Order.class, 2);
+		order.getCustomer().setCustomerName("oracle");
+		
+	}
+	
+	@Test
+	public void testManyToOneGet() {
+		
+		Order order = session.get(Order.class, 2);
+		System.out.println(order.getOrderName());
+		System.out.println(order);
+	}
+	
+	@Test
 	public void testManyToOneSave() {
 		
 		Customer customer = new Customer();
