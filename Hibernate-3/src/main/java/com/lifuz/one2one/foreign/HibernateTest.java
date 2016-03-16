@@ -42,6 +42,23 @@ public class HibernateTest {
 		
 	}
 	
+	/**
+	 * 测试获取
+	 */
+	@Test
+	public void testGet() {
+		//1.默认情况下对关联属性使用懒加载
+		//2.所以会出现懒加载异常问题
+		
+		Department dept = session.get(Department.class, 22);
+		
+		System.out.println(dept.getDeptName());
+		
+	}
+	
+	/**
+	 * 测试保存
+	 */
 	@Test
 	public void testSave() {
 		
@@ -56,6 +73,7 @@ public class HibernateTest {
 		manager.setDept(department);
 		
 		//保存操作
+		//建议先保存没有外键类的对象
 		session.save(manager);
 		session.save(department);
 		
