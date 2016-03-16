@@ -11,6 +11,7 @@
         <property name="mgrName" type="java.lang.String">
             <column name="MGR_NAME" />
         </property>
+        <!-- 映射1-1 的关联关系：在对应的数据表中已经有外键了，当前持久化类 使用 one-to-one 进行映射 -->
         <one-to-one name="dept" class="com.lifuz.one2one.foreign.Department"></one-to-one>
     </class>
 </hibernate-mapping>

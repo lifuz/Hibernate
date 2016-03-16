@@ -11,6 +11,7 @@
         <property name="deptName" type="java.lang.String">
             <column name="DEPT_NAME" />
         </property>
+        <!-- 使用 many-to-one 方式来映射1-1关联关系 -->
         <many-to-one name="mgr" class="com.lifuz.one2one.foreign.Manager"
         	column="MGR_ID" unique="true"></many-to-one>
     </class>
