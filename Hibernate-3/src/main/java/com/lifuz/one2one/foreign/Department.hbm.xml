@@ -6,7 +6,7 @@
     <class name="com.lifuz.one2one.foreign.Department" table="DEPARTMENTS">
         <id name="deptNo" type="java.lang.Integer">
             <column name="DEPT_NO" />
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
         <property name="deptName" type="java.lang.String">
             <column name="DEPT_NAME" />

@@ -6,7 +6,7 @@
     <class name="com.lifuz.one2one.foreign.Manager" table="MANAGERS">
         <id name="mgrId" type="java.lang.Integer">
             <column name="MGR_ID" />
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
         <property name="mgrName" type="java.lang.String">
             <column name="MGR_NAME" />
