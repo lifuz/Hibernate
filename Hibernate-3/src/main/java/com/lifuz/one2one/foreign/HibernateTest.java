@@ -45,6 +45,21 @@ public class HibernateTest {
 	@Test
 	public void testSave() {
 		
+		Department department = new Department();
+		department.setDeptName("DEPT-AA");
+		
+		Manager manager = new Manager();
+		manager.setMgrName("MGR-AA");
+		
+		//设定关联关系
+		department.setMgr(manager);
+		manager.setDept(department);
+		
+		//保存操作
+		session.save(manager);
+		session.save(department);
+		
+		
 	}
 
 }
