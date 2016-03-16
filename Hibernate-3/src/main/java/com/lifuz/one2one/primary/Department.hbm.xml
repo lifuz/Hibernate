@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-14 19:08:41 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.lifuz.one2one.primary.Department" table="DEPARTMENTS">
+        <id name="deptNo" type="java.lang.Integer">
+            <column name="DEPT_NO" />
+            <generator class="assigned" />
+        </id>
+        <property name="deptName" type="java.lang.String">
+            <column name="DEPT_NAME" />
+        </property>
+        <many-to-one name="mgr" class="com.lifuz.one2one.primary.Manager"
+        	column="MGR_ID" unique="true"></many-to-one>
+    </class>
+</hibernate-mapping>
